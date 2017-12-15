@@ -1,0 +1,145 @@
+//= header.html
+
+<!-- Начало главного(заставочного) экрана -->
+	<section id="opening" class="opening section-shadow">
+		<div class="opening-overlay"></div>
+		<div class="container">
+			<div class="opening-center">
+				<div class="opening-wrapper">
+					<h1><span>MetsudaHub</span> Каталог краудфандинговых проектов</h1>
+					<p>Предложите людям интересную идею или что-то полезное. Расскажите об этом всем, протестируйте спрос на свой продукт через ранние предзаказы. Получите деньги и измените мир прямо сейчас!</p>
+					<div class="opening-buttons">
+						<a class="button button_white" href="catalog.html">Посмотреть каталог</a>
+						<a class="button button_white" href="rules.html">Создать проект</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- Конец главного(заставочного) экрана -->
+
+<!-- Начало Блока "Создать проект" -->
+	<section class="create">
+		<div class="container">
+			<div class="col-sm-7">
+				<div class="create-offer">
+					<h2>Есть идея?</h2>
+					<p>Предложите людям интересную идею или что-то полезное. Расскажите об этом всем, протестируйте спрос на свой продукт через ранние предзаказы. Получите деньги и измените мир прямо сейчас!</p>
+				</div>
+			</div>
+			<div class="col-sm-4 col-sm-offset-1">
+				<div class="create-solution">
+					<a class="button button_purple" href="#">Создать проект</a>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- Конец Блока "Создать проект" -->
+
+<!-- Начало Блока статистики -->
+	<section class="stats">
+		<div class="container">
+			<h2>За нашими плечами богатый опыт</h2>
+			<div class="col-sm-4">
+				<div class="stats-projects">
+					<div class="stats-number">
+						1000
+					</div>
+					<div class="stats-text">
+						Проектов на <span>MetsudaHub</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="stats-money">
+					<div class="stats-number">
+						100.000.000
+					</div>
+					<div class="stats-text">
+						Рублей привлечено
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="stats-authors">
+					<div class="stats-number">
+						678
+					</div>
+					<div class="stats-text">
+						Активных авторов
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- Конец Блока статистики -->
+
+<!-- Начало Блока случайного проекта -->
+<section id="project-opening" class="project">
+	<div class="project-overlay"></div>
+	<div class="container">
+		<h2 class="main-random">Случайный проект</h2>
+		<div class="project-time">
+			<div class="project-start">
+				<span>Начало</span>
+				7 Декабря 2017 16:00
+			</div>
+			<div class="project-status project-status_active">
+				Проект активен
+			</div>
+			<div class="project-end">
+				<span>Конец</span>
+				11 Декабря 2017 21:00
+			</div>
+		</div>
+		<div class="project-center">
+			<div class="project-wrapper">			
+				<h2>Название проекта</h2>
+				<div class="project-authors">
+					Авторы: <a href="#">Владислав Кирилёнок</a>, <a href="#">Дмитрий Сергеев</a>
+				</div>
+				<div class="project-budget">
+					Бюджет: 100.000 ₽
+				</div>
+				<div class="project-presentation">
+					<img src="img/catalog/project.jpg" alt="">
+				</div>
+				<p class="project-description">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Его вдали своего, силуэт большого пунктуация большой пояс буквенных коварных дорогу приставка не пустился семантика, рекламных. Предупреждал запятых залетают о своего родного страна, если пунктуация образ решила его предложения которой ручеек, дал рыбного наш приставка они, переписали имеет ему раз подпоясал буквоград? Раз предупредила взгляд подпоясал страна текста рот имени.</p>
+			</div>
+		</div>
+		<div class="project-additional">
+			<div class="project-geo">
+				<a href="#">Санкт-Петербург, Россия</a>
+			</div>
+			<div class="project-button">
+				<a class="button button_white" href="#">Связаться с автором</a>
+			</div>
+			<div class="project-category">
+				<span>Категория</span>
+				<a href="#">Информационные технологии</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Конец блока случайного проекта -->
+<!-- Футер -->
+//= footer.html
+<!-- Конец футера -->
+
+<!-- Начало скиптов -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script>
+	$('#opening').parallax({
+		imageSrc: 'img/opening/opening-bg.jpg',
+		speed: 0.2
+	})
+	$('#project-opening').parallax({
+		imageSrc: 'img/project/bg.jpg',
+		speed: 0.2
+	});
+	</script>
+<!-- Конец скриптов -->
+
+</body>
+</html>

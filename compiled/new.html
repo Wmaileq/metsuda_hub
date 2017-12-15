@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Metsuda Hub</title>
+
+	<!-- Подключенные CSS -->
+	<link href="css/bootstrap.grid.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.modal.min.css">
+	<!-- Конец подключенных CSS -->
+
+	<!-- Компилированный CSS -->
+	<link rel="stylesheet" href="css/style.css"/>
+	<!-- Конец компилированных CSS -->
+
+</head>
+<body>
+	<header class="header">
+		<div class="header-overlay"></div>
+		<div class="container">
+			<div class="col-sm-2">
+				<a href="index.html">
+					<img src="img/logo.svg" alt="Methuda Hub - Каталог краудфандинговых проектов">
+				</a>
+			</div>
+			<div class="col-sm-10">
+				<div class="col-sm-8">
+					<nav class="header-nav">
+						<ul>
+							<li>
+								<a class="active" href="index.html">Главная</a>
+							</li>
+							<li>
+								<a href="about.html">О площадке</a>
+							</li>
+							<li>
+								<a href="catalog.html">Проекты</a>
+							</li>
+							<li>
+								<a href="authors.html">Авторы</a>
+							</li>
+							<li>
+								<a href="rules.html">Создать проект</a>
+							</li>
+							<li>
+								<a href="news.html">Новости</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-sm-3">
+					<div class="header-search">
+						<div class="header-search-wrapper">
+							<input type="text" placeholder="Поиск по проектам">
+						</div>
+						<input type="submit" value="">
+					</div>
+				</div>
+				<div class="col-sm-1">
+					<div class="header-login">
+						<a href="login.html">Войти</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+<div class="secondarynav">
+	<div class="container">
+		<div class="col-sm-8">
+			<div class="secondarynav-left">
+				<a href="index.html">Главная</a>
+				<a href="catalog.html">Каталог проектов</a></div>
+		</div>
+		<div class="col-sm-4">
+			<div class="secondarynav-right">
+				<ul>
+					<li><a href="#"><img src="img/svg/vk_purple.svg" alt="Мы - Вконтакте"></a></li>
+					<li><a href="#"><img src="img/svg/fb_purple.svg" alt="Мы - в Facebook"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="new">
+	<div class="container">
+		<h2>Создание проекта</h2>
+		<div class="col-sm-9">
+			<form action="#" id="form-new">
+				<div class="new-wrapper new-title">
+					<h3>Название проекта</h3>
+					<p class="new-tint">Простое, запоминающееся, отражающее суть проекта</p>
+					<input id="new-title" name="title" type="text" placeholder="Введите название проекта">
+				</div>
+				<div class="new-wrapper new-image">
+					<h3>Обложка проекта</h3>
+					<input type="file">
+				</div>
+				<div class="new-wrapper new-desc-short">
+					<h3>О проекте в одном предложении</h3>
+					<p class="new-tint">Будет отображаться в каталоге проектов</p>
+					<input id="new-desc-short" name="new-desc-short" type="text" placeholder="Введите краткое описание">
+				</div>
+				<div class="new-wrapper new-category">
+					<h3>Категория</h3>
+					<select name="new-category" id="new-category">
+						<option value="Информационные технологии">Информационные технологии</option>
+						<option value="Здоровье">Здоровье</option>
+						<option value="Предложить свою">Предложить свою</option>
+					</select>
+					<input type="hidden" placeholder="Введите название категории">
+				</div>
+				<div id="new-city" class="new-wrapper new-city">
+					<h3>Город</h3>
+					<select name="new-city" id="new-city">
+						<option value="Санкт-Петербург">Санкт-Петербург</option>
+						<option value="Москва">Москва</option>
+						<option value="Казань">Казань</option>
+						<option value="Новосибирск">Новосибирск</option>
+					</select>
+				</div>
+				<div class="new-wrapper new-budget">
+					<h3>Бюджет</h3>
+					<input step="500" id="new-budget" type="number"> ₽
+				</div>
+				<div class="new-wrapper new-date">
+					<h3>Дата старта</h3>
+					<input id="new-date-start" type="date">
+				</div>
+				<div class="new-wrapper new-date">
+					<h3>Дата завершения</h3>
+					<input id="new-date-end" type="date">
+				</div>
+				<div class="new-wrapper new-description">
+					<h3>Полное описание</h3>
+					<textarea></textarea>
+				</div>
+				<div class="new-wrapper new-submit">
+					<input class="button button_purple" type="submit" value="Создать проект">
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-3">
+			<div class="new-preview">
+				<div class="catalog-card">
+					<div>
+						<img src="img/catalog/project.jpg" alt="">
+						<h3>Название стартапа</h3>
+					</div>
+					<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
+					<p>Краткое описание проекта (должно обрезаться, если введено слишком много текста Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+					<div class="catalog-geo">
+						<span>Санкт-Петербург, Россия</span>
+					</div>
+					<div class="catalog-progress">
+						<div class="catalog-status catalog-status_open">
+							Статус проекта: <span>Открыт</span>
+						</div>
+						<div class="catalog-wrapper">
+							<div class="catalog-money">
+								<span>Бюджет:</span>
+								18.000
+							</div>
+							<div class="catalog-time">
+								<span>Осталось:</span>
+								5 минут
+							</div>
+						</div>						
+					</div>
+					<div class="catalog-dates">
+						<div class="catalog-dates-start">
+							<span>Начало:</span> 10 Декабря 2017
+						</div>
+						<div class="catalog-dates-end">
+							<span>Конец:</span> 18 Декабря 2017
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Футер -->
+<footer class="footer">
+	<div class="footer-overlay"></div>
+	<div class="container">
+		<div class="row">
+			© MetsudaHub 2017
+		</div>
+	</div>
+</footer>
+<!-- Конец футера -->
+
+<!-- Начало скиптов -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$('#new-title').on('change', function(){
+			var content = $(this).val();
+			$('.new-preview h3').html(content);
+		});
+		$('#new-desc-short').on('change', function(){
+			var content = $(this).val();
+			$('.new-preview p').html(content);
+		});
+		$('#new-city').on('change', function(){
+			var content = $('#new-city option:selected').val();
+			$('.new-preview .catalog-geo span').html(content);
+		});
+		$('#new-budget').on('change', function(){
+			var content = $(this).val();
+			$('.new-preview .catalog-money').html('<span>Бюджет</span>' + content);
+		});
+	</script>
+<!-- Конец скриптов -->
+
+</body>
+</html>

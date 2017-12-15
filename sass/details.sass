@@ -1,0 +1,94 @@
+@import common
+.details
+	background: url(../img/common/bg.png) repeat
+.details-menu
+	border-bottom: 1px solid #cecece
+	height: 6rem
+	ul
+		list-style-type: none
+		font-size: 0
+		li
+			font-size: 2.2rem
+			display: inline-block
+			padding: 0 2rem
+			a
+				display: inline-block
+				height: 6rem
+				line-height: 6rem
+				color: #000
+				border-bottom: 2px solid transparent
+				transition: all 0.2s
+				&:hover, &.active
+					border-bottom: 2px solid $m-c
+.details-wrapper
+	h2
+		text-align: center
+		margin-bottom: 1rem
+	p
+		font-size: 1.8rem
+	.tab
+		display: none
+		overflow: hidden
+		padding: 4rem 0
+	.tab_active
+		display: block
+.details-comment
+	font-size: 0
+	margin-bottom: 4rem
+.details-comment-avatar
+	position: relative
+	display: inline-block
+	width: 15rem
+	height: 15rem
+	vertical-align: top
+	border-radius: 2rem
+	margin-right: 2rem
+	overflow: hidden
+	img
+		position: absolute
+		left: 50%
+		top: 0
+		transform: translateX(-50%)
+		width: 15rem
+.details-comment-wrapper
+	display: inline-block
+	width: calc(100% - 25rem)
+	vertical-align: top
+.details-comment-name
+	font-size: 2.4rem
+.details-comment-text
+	p
+		font-size: 1.6rem
+		line-height: 2rem
+.details-comments-new
+	text-align: right
+	textarea
+		width: 100%
+		height: 15rem
+		padding: 1rem
+		resize: vertical
+.details-comments-new-header
+	font-size: 2.4rem
+	text-align: left
+.details-news-image
+	img
+		max-width: 100%
+		vertical-align: top
+.details-news-wrapper
+	text-align: center
+	border-bottom: 1px solid #cfcfcf
+	padding-bottom: 4rem
+	padding-top: 4rem
+	h3
+		font-size: 2.4rem
+		text-align: left
+	a
+		margin-top: 2rem
+.details-news-date
+	font-style: italic
+	margin-bottom: 2rem
+	text-align: left
+.details-news-description
+	font-size: 1.6rem
+	text-align: left
+	

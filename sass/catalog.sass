@@ -1,0 +1,195 @@
+@import common
+.catalog
+	margin-top: 4rem
+	padding-bottom: 4rem
+	h2
+		text-align: center
+		margin-bottom: 2rem
+.catalog-card
+		display: block
+		position: relative
+		border-radius: 1rem
+		height: 56rem
+		background-color: #fff
+		overflow: hidden
+		box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem rgba(0,0,0,0.15)
+		img
+			position: absolute
+			top: 0
+			left: 50%
+			height: 18rem
+			border-top-right-radius: 1rem
+			border-top-left-radius: 1rem
+			transform: translateX(-50%)
+			min-width: 100%
+		h3
+			color: $m-c
+			margin-top: 1rem
+			line-height: 1.8rem
+			font-size: 1.7rem
+			padding: 0 1rem
+			margin-top: 19rem
+			height: 3.7rem
+		p
+			padding: 0 1rem 1rem 1rem
+			font-size: 1.5rem
+			margin-top: 2rem
+			color: #6b6b6b
+			height: 14rem
+			line-height: 1.8rem
+.catalog-card_author
+	height: 24rem
+	img
+		height: 15rem
+	h3
+		height: auto
+		font-size: 1.35rem
+		margin-top: 16rem
+		padding: 0 0.5rem
+	.catalog-geo
+		font-size: 1.2rem
+		padding: 0 0.5rem 0 2rem
+		&:before
+			left: 0.5rem
+			top: 0.25rem
+			width: 1.5rem
+			height: 1.5rem
+.catalog-quantity
+	padding-left: 0.5rem
+	font-size: 1.2rem
+	margin-bottom: 1rem
+	span
+		font-style: italic
+.catalog-author
+		padding: 0 1rem
+		font-weight: 700
+		a
+			border-bottom: 2px dashed $m-c
+			color: $m-c
+			transition: all 0.2s
+			&:hover
+				border-bottom: 2px dashed transparent
+.catalog-geo
+	display: block
+	position: relative
+	padding: 0 1rem 0 3rem
+	font-size: 1.4rem
+	font-style: italic
+	color: $m-c
+	transition: all 0.2s
+	span
+		border-bottom: 1px dashed #6b6b6b
+		&:hover
+			border-bottom: 1px dashed transparent
+	&:before
+		content: ''
+		position: absolute
+		background: url(../img/svg/geo.svg) center center no-repeat
+		left: 1rem
+		top: 0
+		background-size: cover
+		width: 2rem
+		height: 2rem
+.catalog-progress
+	height: 7.4rem
+.catalog-status
+	padding-top: 1rem
+	text-align: center
+.catalog-status_open
+	span
+		color: green
+.catalog-status_closed
+	span
+		color: red
+.catalog-wrapper
+	padding: 1rem 1rem 0
+	font-size: 0
+.catalog-money
+	padding-left: 1.6rem
+	position: relative
+	display: inline-block
+	width: 50%
+	font-size: 1.8rem
+	span
+		display: block
+		color: #6b6b6b
+		font-size: 1.2rem
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 2.2rem
+		background: url(../img/svg/rouble.svg) center center no-repeat
+		width: 1.5rem
+		height: 1.5rem
+		background-size: cover!important
+.catalog-time
+	padding-left: 2rem
+	position: relative
+	display: inline-block
+	width: 50%
+	font-size: 1.8rem
+	span
+		display: block
+		color: #6b6b6b
+		font-size: 1.2rem
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 2.2rem
+		background: url(../img/svg/clocks.svg) center center no-repeat
+		width: 1.5rem
+		height: 1.5rem
+		background-size: cover!important
+.catalog-search
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		background: url(../img/svg/search.svg) center center no-repeat
+		width: 2rem
+		height: 2rem
+		z-index: 200
+		background-size: cover
+	input
+		padding-left: 2.5rem
+		padding-bottom: 1rem
+		line-height: 2rem
+		width: 100%
+		border: 0
+		border-bottom: 2px solid $m-c
+		font-weight: 700
+		font-size: 1.8rem
+		background-color: transparent
+.catalog-categories
+	margin-top: 2rem
+	h3
+		color: $m-c
+		font-size: 2.2rem
+	ul
+		list-style-type: none
+		li
+			margin: 0.5rem 0
+			padding: 0.5rem 0 0.5rem 1rem
+			font-weight: 700
+			width: 100%
+			transition: all 0.2s
+			&:hover, &.active
+				background-color: $m-c
+				a
+					color: #fff
+		a
+			color: #111
+			transition: all 0.2s
+.catalog-dates
+	display: block
+	padding-left: 1rem
+	font-size: 1.6rem
+	padding-top: 1rem
+.catalog-dates-start, .catalog-dates-end
+	text-align: center
+	span
+		font-weight: 700

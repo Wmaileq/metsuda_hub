@@ -1,0 +1,185 @@
+//= header.html
+
+<section class="login">
+	<div class="container">
+		<h2>Авторизация</h2>
+		<div class="login-wrapper">
+				<div class="login-form">
+					<div class="login-tabs">
+						<div class="login-tab" data-target=".login-reg">
+							Регистрация
+						</div>
+						<div class="login-tab login-tab_active" data-target=".login-login">
+							Вход
+						</div>
+					</div>
+					<div class="login-wrapper">
+						<div class="login-reg">
+							<form id="form-reg" action="#">
+								<h4>Зарегистрируйтесь</h4>
+								<input name="name" type="text" placeholder="Имя">
+								<input name="nameSec" type="text" placeholder="Фамилия">
+								<input name="nameFather" type="text" placeholder="Отчество">
+								<input name="email" type="text" placeholder="E-mail">
+								<input name="city" type="text" placeholder="Город">
+								<input name="phone" type="text" placeholder="Номер телефона">
+								<input id="pass" name="pass" type="password" placeholder="Пароль">
+								<input name="passRepeat" type="password" placeholder="Повторите пароль">
+								<input class="button button_purple" type="submit" value="Зарегистрироваться">
+							</form>
+						</div>
+						<div class="login-login login-activeForm">
+							<form id="form-login" action="#">
+								<h4>Войдите</h4>
+								<input name="email" type="email" placeholder="Ваш email">
+								<input name="pass" type="password" placeholder="Ваш пароль">
+								<input class="button button_purple" type="submit" value="Войти">
+							</form>
+						</div>
+					</div>
+					<div class="login-or">
+						Либо
+					</div>
+					<div class="login-socials">
+						<ul>
+							<li><a class="login-fb" href="#">Войти через Facebook</a></li>
+							<li><a class="login-vk" href="#">Войти через Вконтакте</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+</section>
+//= footer.html
+
+<!-- Начало скиптов -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script>
+		$('.login-tab').click(function(){
+			$('.login-tab_active').removeClass('login-tab_active');
+			$('.login-activeForm').removeClass('login-activeForm');
+			$(this).addClass('login-tab_active');
+			$($(this).data('target')).addClass('login-activeForm');
+		})
+
+		$("#form-login").validate({
+		  rules: {
+		    email: {
+		      required: true,
+		      email: true,
+		      minlength: 7
+		    },
+		    pass: {
+		      required: true,
+		      minlength: 6
+		    }
+		  },
+		  messages: {
+		    email: {
+		      required: 'Пожалуйста, введите E-mail',
+		      email: "Неверный формат E-mail'а",
+		      minlength: 'Минимум 7 символа'
+		    },
+		    pass: {
+		      required: 'Пожалуйста, введите пароль',
+		      minlength: 'Минимум 6 символов'
+		    }
+		  },
+		  submitHandler: function (form) {
+		       $.ajax({
+		           type: "POST",
+		           url: "mail.php",
+		           data: $(form).serialize(),
+		           success: function () {
+		               window.location.href = "index.html";
+		           }
+		       });
+		       return false;
+		   }
+		  });
+		$("#form-reg").validate({
+		  rules: {
+		    name: {
+		      required: true,
+		      minlength: 2
+		    },
+		    nameSec: {
+		      required: true,
+		      minlength: 2
+		    },
+		    nameFather: {
+		      required: false,
+		      minlength: 2
+		    },
+		    email: {
+		      required: true,
+		      minlength: 7,
+		      email: true 
+		    },
+		    city: {
+		      required: true,
+		      minlength: 2
+		    },
+		    phone: {
+		      required: true,
+		      minlength: 7
+		    },
+		    pass: {
+		      required: true,
+		      minlength: 6
+		    },
+		    passRepeat: {
+		      equalTo: '#pass'
+		    }
+		  },
+		  messages: {
+		    name: {
+		      required: 'Пожалуйста, введите Ваше имя',
+		      minlength: 'Минимум 2 символа'
+		    },
+		    nameSec: {
+		      required: 'Пожалуйста, введите Вашу фамилию',
+		      minlength: 'Минимум 2 символа'
+		    },
+		    nameFather: {
+		      minlength: 'Минимум 2 символа'
+		    },
+		    email: {
+		      required: 'Пожалуйста, введите Ваш E-mail',
+		      minlength: 'Минимум 7 символов',
+		      email: 'Пожалуйста, введите корректный E-mail' 
+		    },
+		    city: {
+		      required: 'Пожалуйста, введите Ваш город',
+		      minlength: 'Минимум 2 символа'
+		    },
+		    phone: {
+		      required: 'Пожалуйста, введите Ваш номер',
+		      minlength: 'Минимум 6 символов'
+		    },
+		    pass: {
+		      required: 'Пожалуйста, введите Ваш пароль',
+		      minlength: 'Минимум 6 символов'
+		    },
+		    passRepeat: {
+		      equalTo: 'Пароли не сходятся'
+		    }
+		  },
+		  submitHandler: function (form) {
+		       $.ajax({
+		           type: "POST",
+		           url: "mail.php",
+		           data: $(form).serialize(),
+		           success: function () {
+		               window.location.href = "index.html";
+		           }
+		       });
+		       return false;
+		   }
+		  });
+	</script>
+<!-- Конец скриптов -->
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+@import common
+.project
+	position: relative
+	min-height: 70rem
+	box-shadow: 0 0.2rem 0.6rem 0.2rem rgba($m-c, 0.25)
+	h2
+		color: #fff
+		line-height: 5.2rem
+		&.main-random //Класс для случайного проекта на главной
+			text-align: center
+			margin-top: 2rem
+	.container
+		position: relative
+.project-overlay
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	background-color: rgba($m-c, 0.87)
+.project-time
+	margin-top: 2rem
+	margin-bottom: 2rem
+	height: 4rem
+	font-size: 0
+.project-start, .project-end, .project-status
+	width: 33.33%
+	display: inline-block
+	color: #fff
+	font-size: 1.8rem
+	font-family: $s-f
+	span
+		display: block
+		font-size: 1.4rem
+.project-status
+	position: relative
+	text-align: center
+	font-size: 2.6rem
+	font-weight: 700
+	&_active:after
+		content: ''
+		position: absolute
+		width: 2.5rem
+		height: 2.5rem
+		background: url(../img/svg/active.svg) center center no-repeat
+		top: 0.5rem
+		transform: translateX(1rem)
+	&_closed:after
+		content: ''
+		position: absolute
+		width: 2.5rem
+		height: 2.5rem
+		background: url(../img/svg/closed.svg) center center no-repeat
+		top: 0.5rem
+		transform: translateX(1rem)
+.project-end
+	text-align: right
+.project-center
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	flex-direction: column
+	min-height: 52rem
+	width: 100%
+.project-wrapper
+	text-align: center
+.project-authors
+	color: #fff
+	font-size: 1.4rem
+	margin-bottom: 2rem
+	a
+		color: #fff
+		border-bottom: 2px dashed #fff
+		font-size: 1.4rem
+		transition: all 0.2s
+		font-style: italic
+		&:hover
+			border-bottom: 2px dashed transparent
+.project-budget
+	font-size: 2.4rem
+	color: #fff
+	margin-bottom: 2rem
+.project-presentation
+	max-height: 31.5rem
+	margin-bottom: 2rem
+	img
+		max-height: 31.5rem
+		width: auto
+.project-description
+	color: #fff
+	font-size: 1.7rem
+	width: 75%
+	margin: 0 auto 2rem
+.project-additional
+	margin-top: 2rem
+	margin-bottom: 2rem
+	height: 8rem
+	font-size: 0
+.project-geo, .project-button, .project-category
+	width: 33.33%
+	display: inline-block
+	font-size: 1.8rem
+	color: #fff
+	height: 8rem
+	vertical-align: top
+.project-geo
+	padding-left: 4rem
+	position: relative
+	font-weight: 700
+	font-size: 2rem
+	line-height: 8rem
+	&:before
+		content: ''
+		position: absolute
+		background: url(../img/svg/geo_white.svg) center center no-repeat
+		left: 1rem
+		top: 2.5rem
+		background-size: cover
+		width: 3rem
+		height: 3rem
+	a
+		color: #fff
+		border-bottom: 2px dashed #fff
+		transition: all 0.2s
+		&:hover
+			border-bottom: 2px dashed transparent
+.project-button
+	text-align: center
+	padding-top: 1.5rem
+.project-category
+	text-align: right
+	font-size: 1.4rem
+	padding-top: 0.7rem
+	span
+		display: block
+		font-size: 1.4rem
+	a
+		color: #fff
+		border-bottom: 2px dashed #fff
+		transition: all 0.2s
+		font-size: 2rem
+		font-weight: 700
+		&:hover
+			border-bottom: 2px dashed transparent

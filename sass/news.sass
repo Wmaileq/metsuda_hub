@@ -1,0 +1,47 @@
+@import common
+.news
+	h1
+		text-align: center
+.news-wrapper
+	font-size: 0
+	& > div
+		margin-top: 4rem
+	& > div:nth-child(2n+1)
+		margin-top: -16rem
+	& > div:nth-child(1)
+		margin-top: 0
+	& > div:nth-child(2)
+		margin-top: 22rem
+.news-card
+	width: calc(50% - 50px)
+	margin: 0 25px
+	display: inline-block
+	vertical-align: top
+	border-bottom: 2px solid $m-c
+	padding-bottom: 2rem
+	h2
+		font-size: 2.4rem
+.news-date
+	font-size: 1.4rem
+	font-style: italic
+	color: #a2a2a2
+	margin-bottom: 1rem
+.news-image
+	position: relative
+	height: 30rem
+	border-radius: 1rem
+	overflow: hidden
+	z-index: 200
+	img
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+		min-width: 100%
+		height: 30rem
+.news-describtion
+	font-size: 1.8rem
+	margin-top: 2rem
+.news-more
+	margin-top: 2rem
+	text-align: right

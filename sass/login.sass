@@ -1,0 +1,117 @@
+@import common
+.login
+	padding: 4rem 0
+.login-form
+	border: 1px solid #cfcfcf
+	width: 30rem
+	margin: 0 auto
+	border-radius: 1rem
+.login-form
+.login-tabs
+	font-size: 0
+	border-radius: 1rem 1rem 0 0
+	border: 1px solid #cfcfcf
+	overflow: hidden
+.login-tab
+	width: 50%
+	display: inline-block
+	font-size: 1.6rem
+	text-align: center
+	cursor: pointer
+	padding: 1rem
+	transition: all 0.2s
+	&:hover
+		background-color: $m-c
+		color: #fff
+	&:nth-of-type(1)
+		border-right: 1px solid #cfcfcf
+.login-tab_active
+	background-color: $m-c
+	color: #fff
+.login-socials
+	ul
+		list-style-type: none
+		border-top: 1px solid #cfcfcf
+		li
+			position: relative
+			margin: 1rem auto 3rem
+			width: 24rem
+			&:after
+				content: 'Или'
+				position: absolute
+				bottom: -2.7rem
+				left: 50%
+				color: #000
+				transform: translateX(-50%)
+				font-weight: 700
+				font-size: 1.6rem
+			&:last-of-type
+				margin-bottom: 1rem
+				&:after
+					display: none
+		a
+			display: block
+			border-radius: 0.5rem
+			height: 4rem
+			line-height: 4rem
+			text-align: center
+			color: #fff
+			font-weight: 700
+			font-size: 1.6rem
+			padding-left: 3rem
+			transition: all 0.2s
+			&:hover
+				transform: scale(1.05)
+				opacity: 0.9		
+			&.login-fb
+				background: #475993 url(../img/svg/fb_white.svg) 1rem center no-repeat
+				background-size: 3rem
+			&.login-vk
+				background: #4D76A1 url(../img/svg/vk_white.svg) 1rem center no-repeat
+				background-size: 3rem
+.login-or
+	text-align: center
+	font-size: 1.8rem
+	border-top: 1px solid #cfcfcf
+	padding: 1.5rem 0
+	font-weight: 700
+.login-wrapper
+	position: relative
+	h4
+		margin-top: 2rem
+		text-align: center
+		font-size: 2rem
+	input
+		display: block
+		width: 24rem
+		margin: 2.5rem auto
+		height: 4rem
+		border: 0
+		border-bottom: 2px solid $m-c
+		padding-left: 1.2rem
+		background-color: transparent
+		&:hover
+			border-bottom: 2px solid gold
+		&:focus
+			border-bottom: 2px solid orange
+		&.error
+			border-bottom: 2px solid red
+		&.valid
+			border-bottom: 2px solid #b0e0aa
+		&[type="submit"]
+			padding: 0
+			border: 2px solid $m-c
+			line-height: 4rem
+			font-size: 1.7rem
+	label
+		position: absolute
+		left: 0
+		transform: translateY(-2.75rem)
+		font-size: 1.2rem
+		text-align: center
+		color: red
+		width: 30rem
+.login-login, .login-reg
+	display: none
+.login-activeForm
+	display: block

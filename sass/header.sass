@@ -1,0 +1,115 @@
+@import common
+.header
+	position: fixed
+	height: 8.5rem
+	width: 100%
+	left: 0
+	top: 0
+	font-family: $s-f
+	letter-spacing: -0.1rem
+	background: url(../img/gradient.svg) repeat
+	box-shadow: 0 0.15rem 0.4rem 0.1rem rgba(0,0,0,0.15)
+	font-size: 1.8rem
+	z-index: 1000
+.header-overlay
+	position: absolute
+	width: 100%
+	height: 100%
+	background-color: rgba(29,23,142,0.4)
+.header-nav
+	ul
+		height: 8.5rem
+		list-style-type: none
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		a
+			color: #fff
+			transition: all 0.2s
+			border-bottom: 2px dashed transparent
+			&:hover, &:focus, &.active
+				border-bottom: 2px dashed #fff
+				color: #fff
+.header-search
+	height: 8.5rem
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	input
+		height: 3rem
+		padding-left: 2rem
+		background-color: transparent
+		border: 0
+		border-bottom: 2px solid #fff
+		width: 100%
+		font-size: 1.6rem
+		color: #fff
+		&[type="submit"]
+			width: 1.5rem
+			height: 1.5rem
+			margin-top: 0.5rem
+			border-bottom: 2px solid transparent
+			padding-left: 0
+			background: url(../img/svg/double-arrows-right.svg) center center no-repeat
+			background-size: cover
+		&::-webkit-input-placeholder
+			color: #fff
+		&:-moz-placeholder
+			color: #fff
+		&::-moz-placeholder
+			color: #fff
+		&:-ms-input-placeholder
+			color: #fff
+		&:focus
+			&::-webkit-input-placeholder
+				font-size: 0
+			&:-moz-placeholder
+				font-size: 0
+			&::-moz-placeholder
+				font-size: 0
+			&:-ms-input-placeholder
+				font-size: 0
+.header-search-wrapper
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		height: 1.5rem
+		width: 1.5rem
+		left: 0
+		top: 0.75rem
+		background: url(../img/svg/search.svg) center center no-repeat
+		background-size: cover
+.header-login
+	height: 8.5rem
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	a
+		position: relative
+		padding-left: 2rem
+		height: 3rem
+		line-height: 3rem
+		font-weight: 600
+		color: #fff
+		&:before
+			content: ''
+			position: absolute
+			width: 1.5rem
+			height: 1.5rem
+			top: 0.75rem
+			left: 0
+			background: url(../img/svg/home.svg) center center no-repeat
+			background-size: cover!important
+		&:active
+			color: #fff

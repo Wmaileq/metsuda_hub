@@ -1,0 +1,95 @@
+@import common
+.modal-author
+	button
+		background-color: transparent
+		border: 0
+		font-size: 3rem
+		position: absolute
+		right: 1rem
+		top: 0
+	h3
+		font-size: 2.6rem
+	h4
+		font-size: 2rem
+		margin-bottom: 2rem
+	.modal-dialog
+		width: 100rem
+	.modal-content
+		padding: 2rem
+.modal-author-img
+	width: 20rem
+	display: inline-block
+	border-radius: 1rem
+.modal-author-desc
+	display: inline-block
+	vertical-align: top
+	padding-left: 2rem
+.modal-author-projects
+	font-size: 1.6rem
+	span
+		font-style: italic
+.modal-author-wrapper
+	padding-top: 2rem
+	margin-bottom: 2rem
+	width: 100%
+	font-size: 0
+.modal-author-text
+	vertical-align: top
+	display: inline-block
+	width: 66.66%
+	font-size: 1.5rem
+	padding-right: 15px
+	h4
+		margin-bottom: 5rem
+.modal-author-links
+	padding-left: 15px
+	vertical-align: top
+	display: inline-block
+	font-size: 1.6rem
+	width: 33.34%
+	div
+		margin-bottom: 1rem
+		padding-left: 3rem
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			left: 0rem
+			top: 0.2rem
+			background-size: cover!important
+			width: 2rem
+			height: 2rem
+	a
+		font-size: 1.6rem
+		color: #000
+		border-bottom: 1px dashed #000
+		transition: all 0.2s
+		&:hover
+			border-bottom: 1px dashed transparent
+.modal-author-region:before
+	background: url(../img/svg/geo_black.svg) center center no-repeat
+.modal-author-email:before
+	background: url(../img/svg/email_black.svg) center center no-repeat
+.modal-author-phone:before
+	background: url(../img/svg/phone_black.svg) center center no-repeat
+.modal-author-vk:before
+	background: url(../img/svg/vk_black.svg) center center no-repeat
+.modal-author-fb:before
+	background: url(../img/svg/fb_black.svg) center center no-repeat
+.modal-author-web
+	&:before
+		background: url(../img/svg/web_black.svg) center center no-repeat
+	span
+		display: block
+	a
+		display: block
+		margin-bottom: 0.5rem
+		border-bottom: 0
+		&:hover
+			border-bottom: 0
+			span
+				border-bottom: 1px dashed transparent
+		span
+			display: inline-block
+			border-bottom: 1px dashed #000
+			transition: all 0.2s

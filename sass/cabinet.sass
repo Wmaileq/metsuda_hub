@@ -1,0 +1,100 @@
+@import common
+.cabinet
+	padding-top: 4rem
+	padding-bottom: 4rem
+	min-height: calc(100vh - 20.5rem 
+.cabinet-tabs
+	text-align: center
+	font-size: 0
+.cabinet-tab
+	display: inline-block
+	border: 2px solid $m-c
+	font-size: 1.8rem
+	padding: 1rem 2rem
+	transition: all 0.2s
+	cursor: pointer
+	&:hover
+		background-color: $m-c
+		a
+			color: #fff
+	a
+		color: #000
+.cabinet-tab_left
+	border-radius: 1rem 0 0 1rem
+.cabinet-tab_right
+	border-radius: 0 1rem 1rem 0
+.cabinet-tab_active
+	background-color: $m-c
+	a
+		color: #fff
+.cabinet-hide
+	display: none
+.cabinet-show
+	display: block
+.cabinet-profile
+	padding-top: 4rem
+	h3
+		font-size: 2.2rem
+.cabinet-avatar
+	text-align: center
+	a
+		margin-top: 2rem
+	img
+		max-width: 100%
+.cabinet-info
+	text-align: center
+	ul
+		list-style-type: none
+		border-bottom: 1px solid #cfcfcf
+		border-top: 1px solid #cfcfcf
+		margin-top: 2rem
+		text-align: left
+	li
+		padding: 1rem
+		border-top: 1px solid #cfcfcf
+		border-bottom: 1px solid #cfcfcf
+		font-size: 1.6rem
+		span
+			font-weight: 700	
+		img
+			width: 2rem
+		input
+			background-color: transparent
+			border: 0
+			border-bottom: 2px solid $m-c
+			transition: all 0.2s
+			&[readonly]
+				border-bottom: 2px solid transparent!important
+			&:hover
+				border-bottom: 2px solid gold
+			&:focus
+				border-bottom: 2px solid orange
+			&.error
+				border-bottom: 2px solid red
+			&.valid
+				border-bottom: 2px solid #b0e0aa
+		textarea
+			background-color: transparent
+			border: 0
+			resize: vertical
+			width: 100%
+			border-bottom: 2px solid $m-c
+			&[readonly]
+				border-bottom: 2px solid transparent!important
+			&:hover
+				border-bottom: 2px solid gold
+			&:focus
+				border-bottom: 2px solid orange
+			&.error
+				border-bottom: 2px solid red
+			&.valid
+				border-bottom: 2px solid #b0e0aa
+	input[type="submit"]
+		margin-top: 2rem
+.cabinet-socials
+	span
+		display: block
+.cabinet-edit
+	a
+		font-size: 1.6rem
+		margin-bottom: 2rem

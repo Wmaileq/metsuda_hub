@@ -1,0 +1,52 @@
+@import common
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	text-decoration: none!important
+	&:hover, &:focus
+		text-decoration: none!important
+		outline: none!important
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans:400');
+html
+	font-size: 10px
+body
+	font-family: $m-f
+	background: url(../img/common/bg.png) repeat
+	padding-top: 8.5rem
+h1,h2,h3,h4,h5,h6
+	font-family: $s-f
+h1
+	font-size: 4.2rem
+	text-align: center
+	line-height: 5.2rem
+	margin: 0
+	font-weight: 600
+	span
+		display: block
+h2
+	font-size: 3.8rem
+.section-shadow
+	box-shadow: 0 0.5rem 2rem 0.4rem rgba($m-c, 0.15)
+.button
+	padding: 1rem 2rem
+	display: inline-block
+	font-size: 2rem
+	font-family: $s-f
+	font-weight: 600
+	border-radius: 0.5rem
+	transition: all 0.2s
+	box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem rgba(0,0,0,0.3)
+	&_white
+		border: 2px solid #fff
+		color: #fff
+		&:hover
+			background-color: #FFF
+			color: $m-c
+	&_purple
+		border: 2px solid  $m-c
+		color:  $m-c
+		background-color: #FFF
+		&:hover
+			background-color: $m-c
+			color: #fff
