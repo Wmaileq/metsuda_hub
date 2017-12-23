@@ -32,6 +32,13 @@
 	input[type="date"]
 		width: 20rem
 		line-height: 4rem
+	input[id="new-image"]
+		position: absolute
+		width: 0
+		height: 0
+		border: 0
+	label[for="new-image"]
+		cursor: pointer
 	input[type="submit"]
 		border: 2px solid $m-c
 		padding: 0 2rem
@@ -57,3 +64,8 @@
 	margin-bottom: 2rem
 .new-submit
 	text-align: center
+.new-image
+	img
+		width: 5rem
+		margin-left: 2rem
+		display: none

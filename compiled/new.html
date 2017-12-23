@@ -98,7 +98,10 @@
 				</div>
 				<div class="new-wrapper new-image">
 					<h3>Обложка проекта</h3>
-					<input type="file">
+					<label class="button button_purple" for="new-image">Загрузить изображение</label>
+					<input id="new-image" type="file"  accept="image/jpeg,image/png,image/gif">
+					<img id="new-image-loading" src="img/svg/loading.svg" alt=".">
+					<input id="new-image-url" type="hidden" value="Ссылка на картинку">
 				</div>
 				<div class="new-wrapper new-desc-short">
 					<h3>О проекте в одном предложении</h3>
@@ -147,29 +150,22 @@
 		<div class="col-sm-3">
 			<div class="new-preview">
 				<div class="catalog-card">
-					<div>
-						<img src="img/catalog/project.jpg" alt="">
-						<h3>Название стартапа</h3>
-					</div>
+					<a href="project.html">
+						<img id="catalog-card-preview" src="img/catalog/project.jpg" alt="">
+						<h3>Название стартапа в две строки максимум</h3>
+					</a>
 					<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
 					<p>Краткое описание проекта (должно обрезаться, если введено слишком много текста Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
-					<div class="catalog-geo">
+					<a href="#" class="catalog-geo">
 						<span>Санкт-Петербург, Россия</span>
-					</div>
+					</a>
 					<div class="catalog-progress">
 						<div class="catalog-status catalog-status_open">
 							Статус проекта: <span>Открыт</span>
 						</div>
-						<div class="catalog-wrapper">
-							<div class="catalog-money">
-								<span>Бюджет:</span>
-								18.000
-							</div>
-							<div class="catalog-time">
-								<span>Осталось:</span>
-								5 минут
-							</div>
-						</div>						
+						<div class="catalog-money">
+							<span>Бюджет:</span>18.000	
+						</div>
 					</div>
 					<div class="catalog-dates">
 						<div class="catalog-dates-start">
@@ -199,11 +195,11 @@
 <!-- Начало скиптов -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
-		$('#new-title').on('change', function(){
+		$('#new-title').on('keyup', function(){
 			var content = $(this).val();
 			$('.new-preview h3').html(content);
 		});
-		$('#new-desc-short').on('change', function(){
+		$('#new-desc-short').on('keyup', function(){
 			var content = $(this).val();
 			$('.new-preview p').html(content);
 		});
@@ -211,9 +207,52 @@
 			var content = $('#new-city option:selected').val();
 			$('.new-preview .catalog-geo span').html(content);
 		});
-		$('#new-budget').on('change', function(){
+		$('#new-budget').on('keyup', function(){
 			var content = $(this).val();
-			$('.new-preview .catalog-money').html('<span>Бюджет</span>' + content);
+			$('.new-preview .catalog-money').html('<span>Бюджет</span> ' + content.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1'));
+		});
+		$('#new-date-start').on('change',function(){
+			var date = new Date($(this).val());
+			var options = {
+			  year: 'numeric',
+			  month: 'long',
+			  day: 'numeric'
+			};
+			var dateStr = date.toLocaleString('ru', options);
+			dateStr = dateStr.replace(' г.','');
+			$('.catalog-dates-start').html('<span>Начало:</span> ' + dateStr);
+		})
+		$('#new-date-end').on('change',function(){
+			var date = new Date($(this).val());
+			var options = {
+			  year: 'numeric',
+			  month: 'long',
+			  day: 'numeric'
+			};
+			var dateStr = date.toLocaleString('ru', options);
+			dateStr = dateStr.replace(' г.','');
+			console.log(dateStr);
+			$('.catalog-dates-end').html('<span>Конец:</span> ' + dateStr);
+		})
+		$('#new-image').on('change', function(){
+			var image = $(this)[0].files[0];
+			$('#new-image-loading').show();
+			$.ajax({
+				url: '',
+				data: 'image',
+				processData: false,
+				contentType: false,
+				type: 'POST',
+				success: function () {
+					var url = $('#new-image-url').value();
+					$('#catalog-card-preview').attr('src', url);
+					$('#new-image-loading').hide();
+				},
+				error: function () {
+					alert('Ошибка загрузки файла');
+					$('#new-image-loading').hide();
+				}
+			});
 		});
 	</script>
 <!-- Конец скриптов -->

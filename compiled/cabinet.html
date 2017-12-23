@@ -60,8 +60,11 @@
 					</div>
 				</div>
 				<div class="col-sm-1">
-					<div class="header-login">
-						<a href="login.html">Войти</a>
+					<div class="header-logined">
+						<a href="#"><img src="img/authors/avatar.jpg" alt=""></a>
+					</div>
+					<div class="header-logined-dropdown">
+						<a href="cabinet.html">Моя страница</a>
 					</div>
 				</div>
 			</div>
@@ -110,7 +113,14 @@
 						<ul>
 							<li>Email: <input name="email" type="text" value="bkirilenok@gmail.com" readonly></li>
 							<li>Телефон: <input name="phone" type="tel" value="+375447962129" readonly></li>
-							<li>Город: <input name="city" type="text" value="Москва" readonly></li>
+							<li>Город: 
+								<select name="city" type="text" disabled>
+									<option value="1">Москва</option>
+									<option value="1">Москва</option>
+									<option value="1">Москва</option>
+									<option value="1">Москва</option>
+								</select>
+							</li>
 							<li>Сайт: <input name="web" type="text" value="http://webminsk.by" readonly></li>
 							<li class="cabinet-socials">
 								Социальные сети:
@@ -132,11 +142,54 @@
 				</div>
 			</div>
 			<div id="cabinet-projects" class="cabinet-projects cabinet-wrappers cabinet-hide">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="catalog-card">
+							<div class="cabinet-card-overlay">
+								<div class="cabinet-card-overlay-wrapper">
+									<a class="button button_white" href="project.html">Перейти к проекту</a>
+									<a class="button button_white cabinet-edit_project" href="#">Редактировать</a>
+									<a class="button button_white cabinet-edit_news" href="#">Новости</a>
+									<a class="button button_white cabinet-edit_sponsors" href="#">Спонсоры</a>
+								</div>
+							</div>
+							<a href="project.html">
+								<img src="img/catalog/project.jpg" alt="">
+								<h3>Название стартапа в две строки максимум</h3>
+							</a>
+							<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
+							<p>Краткое описание проекта (должно обрезаться, если введено слишком много текста Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+							<a href="#" class="catalog-geo">
+								<span>Санкт-Петербург, Россия</span>
+							</a>
+							<div class="catalog-progress">
+								<div class="catalog-status catalog-status_open">
+									Статус проекта: <span>Открыт</span>
+								</div>
+								<div class="catalog-money">
+									<span>Бюджет:</span>18.000	
+								</div>
+							</div>
+							<div class="catalog-dates">
+								<div class="catalog-dates-start">
+									<span>Начало:</span> 10 Декабря 2017
+								</div>
+								<div class="catalog-dates-end">
+									<span>Конец:</span> 18 Декабря 2017
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="cabinet-edit" class="cabinet-wrappers cabinet-hide">
 			</div>
 		</div>
 	</div>
 </div>
-
+<div id="loading">
+	<img src="img/svg/loading.svg" alt="">
+</div>
 <footer class="footer">
 	<div class="footer-overlay"></div>
 	<div class="container">
@@ -158,7 +211,73 @@
 		$('#editButton').click(function(){
 			$('#form-profile input').removeAttr('readonly');
 			$('#form-profile textarea').removeAttr('readonly');
+			$('#form-profile select').removeAttr('disabled');
 			$('#form-profile-save').attr('type', 'submit');
+		})
+	</script>
+	<script>
+		$('.cabinet-edit_project').click(function(){
+			$('.cabinet-wrappers').addClass('cabinet-hide');
+			$('#cabinet-edit').removeClass('cabinet-hide');
+			$('#loading').show();
+			$.ajax({
+				url: 'edit-project.html',
+				cache: false,
+				success: function(html){
+					$('#cabinet-edit').html(html);
+					$('#loading').hide();
+				},
+				error: function(){
+					$('#loading').hide();
+					alert('Ошибка загрузки редактирования проекта');
+					$('.cabinet-wrappers').addClass('cabinet-hide');
+					$('#cabinet-projects').removeClass('cabinet-hide');
+				}
+			})
+		});
+		$('.cabinet-edit_news').click(function(){
+			$('.cabinet-wrappers').addClass('cabinet-hide');
+			$('#cabinet-edit').removeClass('cabinet-hide');
+			$('#loading').show();
+			$.ajax({
+				url: 'edit-news.html',
+				cache: false,
+				success: function(html){
+					$('#cabinet-edit').html(html);
+					$('#loading').hide();
+				},
+				error: function(){
+					$('#loading').hide();
+					alert('Ошибка загрузки редактирования новостей');
+					$('.cabinet-wrappers').addClass('cabinet-hide');
+					$('#cabinet-projects').removeClass('cabinet-hide');
+				}
+			})
+		});
+		$('.cabinet-edit_sponsors').click(function(){
+			$('.cabinet-wrappers').addClass('cabinet-hide');
+			$('#cabinet-edit').removeClass('cabinet-hide');
+			$('#loading').show();
+			$.ajax({
+				url: 'edit-sponsors.html',
+				cache: false,
+				success: function(html){
+					$('#cabinet-edit').html(html);
+					$('#loading').hide();
+				},
+				error: function(){
+					$('#loading').hide();
+					alert('Ошибка загрузки редактирования спонсоров');
+					$('.cabinet-wrappers').addClass('cabinet-hide');
+					$('#cabinet-projects').removeClass('cabinet-hide');
+				}
+			})
+		});
+	</script>
+	<script>
+		$('.header-logined a').click(function(){
+			$('.header-logined-dropdown').toggle();
+			return false;
 		})
 	</script>
 <!-- Конец скриптов -->

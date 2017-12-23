@@ -1,0 +1,48 @@
+<div class="edit-sponsors">
+	<div class="edit-sponsors-block">
+		<div class="edit-sponsors-wrapper">
+			<img src="img/partners/1.png" alt="">
+			1
+			<div class="edit-sponsors-arrows">
+				<div class="edit-sponsors-close"></div>			
+				<div class="edit-sponsors-left"></div>
+				<div class="edit-sponsors-right"></div>
+			</div>
+		</div>
+		<div class="edit-sponsors-wrapper">
+			<img src="img/partners/1.png" alt="">
+			2
+			<div class="edit-sponsors-arrows">
+				<div class="edit-sponsors-close"></div>			
+				<div class="edit-sponsors-left"></div>
+				<div class="edit-sponsors-right"></div>
+			</div>
+		</div>
+		<div class="edit-sponsors-wrapper">
+			<img src="img/partners/1.png" alt="">
+			3
+			<div class="edit-sponsors-arrows">
+				<div class="edit-sponsors-close"></div>			
+				<div class="edit-sponsors-left"></div>
+				<div class="edit-sponsors-right"></div>
+			</div>
+		</div>
+	</div>
+	<form action="#">
+		<label class="button button_purple" for="add-new-sponsor">Добавить нового</label>
+		<input id="add-new-sponsor" type="file" value="Добавить нового">
+	</form>
+</div>
+<script>
+	$('.edit-sponsors-close').on('click',function(){
+		$(this).parent().parent().remove();
+	});
+	$('.edit-sponsors-right').on('click',function(){
+		var block = $(this).parent().parent();
+		block.insertAfter(block.next());
+	});
+	$('.edit-sponsors-left').on('click',function(){
+		var block = $(this).parent().parent();
+		block.insertBefore(block.prev());
+	});
+</script>

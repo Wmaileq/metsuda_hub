@@ -21,7 +21,13 @@
 								<input name="nameSec" type="text" placeholder="Фамилия">
 								<input name="nameFather" type="text" placeholder="Отчество">
 								<input name="email" type="text" placeholder="E-mail">
-								<input name="city" type="text" placeholder="Город">
+								<select name="city">
+									<option value="1">Новосибирск</option>
+									<option value="2">Новосибирск</option>
+									<option value="3">Новосибирск</option>
+									<option value="4">Новосибирск</option>
+									<option value="5">Новосибирск</option>
+								</select>
 								<input name="phone" type="text" placeholder="Номер телефона">
 								<input id="pass" name="pass" type="password" placeholder="Пароль">
 								<input name="passRepeat" type="password" placeholder="Повторите пароль">
@@ -117,10 +123,6 @@
 		      minlength: 7,
 		      email: true 
 		    },
-		    city: {
-		      required: true,
-		      minlength: 2
-		    },
 		    phone: {
 		      required: true,
 		      minlength: 7
@@ -149,10 +151,6 @@
 		      required: 'Пожалуйста, введите Ваш E-mail',
 		      minlength: 'Минимум 7 символов',
 		      email: 'Пожалуйста, введите корректный E-mail' 
-		    },
-		    city: {
-		      required: 'Пожалуйста, введите Ваш город',
-		      minlength: 'Минимум 2 символа'
 		    },
 		    phone: {
 		      required: 'Пожалуйста, введите Ваш номер',

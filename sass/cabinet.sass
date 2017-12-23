@@ -73,6 +73,16 @@
 				border-bottom: 2px solid red
 			&.valid
 				border-bottom: 2px solid #b0e0aa
+		select
+			background-color: transparent
+			border-radius: 0.5rem
+			border: 0
+			border: 2px solid $m-c
+			transition: all 0.2s
+			&[disabled]
+				border: 2px solid transparent!important
+				-webkit-appearance: none
+				-moz-appearance: none
 		textarea
 			background-color: transparent
 			border: 0
@@ -98,3 +108,43 @@
 	a
 		font-size: 1.6rem
 		margin-bottom: 2rem
+.cabinet-projects
+	.catalog-card:hover
+		.cabinet-card-overlay
+			background-color: rgba($m-c, 0.9)
+			a
+				display: inline-block
+.cabinet-card-overlay
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 200
+	transition: all 0.2s
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	a
+		display: none
+		width: 26rem
+.cabinet-card-overlay-wrapper
+	text-align: center
+	a
+		margin-bottom: 2rem
+#loading
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: none
+	img
+		width: 15rem
+		height: 15rem
+		position: absolute
+		top: calc(50% - 7.5rem)
+		left: calc(50% - 7.5rem)

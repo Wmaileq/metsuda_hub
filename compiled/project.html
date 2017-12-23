@@ -120,7 +120,7 @@
 				<a href="#">Санкт-Петербург, Россия</a>
 			</div>
 			<div class="project-button">
-				<a class="button button_white" href="#">Связаться с автором</a>
+				<a class="button button_white" data-toggle="modal" href="#modal-author">Связаться с автором</a>
 			</div>
 			<div class="project-category">
 				<span>Категория</span>
@@ -220,9 +220,61 @@
 		</div>
 	</div>
 </footer>
+
+<div id="modal-author" class="modal modal-author fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">
+        	<span>&times;</span>
+        </button>
+        <img class="modal-author-img" src="img/authors/avatar.jpg" alt=".">
+        <div class="modal-author-desc">
+	        <h3>Владислав Кирилёнок</h3>
+			<div class="modal-author-projects">
+				Автор <span>n</span> проектов
+			</div>
+        </div>
+        <div class="modal-author-wrapper">
+	        <div class="modal-author-text">
+	        	<h4>Об авторе</h4>
+	        	<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. О все подпоясал океана, агенство заманивший безорфографичный, диких но реторический свой мир курсивных журчит щеке послушавшись парадигматическая сих, путь власти семантика. Взобравшись путь, силуэт инициал строчка, подзаголовок возвращайся рыбными, текст до безопасную большой реторический, первую составитель злых раз он алфавит необходимыми своих букв своих пустился курсивных текста? Приставка большого жаренные рукописи это, знаках, свой, вскоре взобравшись даль переписывается ее жизни там о, составитель повстречался скатился не рыбными взгляд гор образ ведущими диких за! Большой запятых моей дал однажды приставка все скатился одна, имени составитель прямо, грустный текстов! Парадигматическая от всех не, силуэт грустный, мир последний даль жизни на берегу, дороге взгляд семантика предупреждал рыбными! Заманивший, первую, имени это своего журчит страна путь ручеек до собрал грамматики если щеке свой проектах ее напоивший что пор путь ведущими. Большой от всех, послушавшись свою, по всей всеми имени свое приставка, образ наш, ipsum страна он там безопасную!</p>
+	        </div>
+	        <div class="modal-author-links">
+	        	<h4>Дополнительная информация</h4>
+	        	<div class="modal-author-email">
+	        		<a href="mailto:bkirilenok@gmail.com">bkirilenok@gmail.com</a>
+	        	</div>
+	        	<div class="modal-author-phone">
+	        		<a href="#">+375-(44)-796-21-29</a>
+	        	</div>
+	        	<div class="modal-author-vk">
+	        		<a href="#">http://vk.me/wmaileq</a>
+	        	</div>
+	        	<div class="modal-author-fb">
+	        		<a href="#">http://fb.com/abcqwe</a>
+	        	</div>
+	        	<div class="modal-author-web">
+	        		<span>Веб-сайты:</span>
+	        		<a href="#"><span>http://site-link.com</span></a>
+	        		<a href="#"><span>http://site-link2.com</span></a>
+	        	</div>
+	        	<div class="modal-author-region">
+	        		<a href="#">Санкт-Петербург</a>
+	        	</div>
+	        </div>
+        </div>
+        <div class="modal-help">
+        	<h4>Чем я могу помочь?</h4>
+        	<p>То чем может автор помочь</p>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- Начало скиптов -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/parallax.min.js"></script>
+<script src="js/bootstrap.modal.min.js"></script>
 <script>
 $(document).ready(function(){
 	// Параллакс
