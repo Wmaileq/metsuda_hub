@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-sm-9">
+		<div class="row details-news-wrapper">
+			<div class="col-sm-3">
+				<div class="details-news-image">
+					<img src="img/news/news.jpg" alt="">
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<h3>Название новости</h3>
+				<div class="details-news-date">
+					9 Декабря 2017 20:40
+				</div>
+				<div class="details-news-description">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Ведущими родного океана рот, коварный вопроса над всеми образ алфавит ты бросил его там толку, мир возвращайся великий предложения дал заглавных за пор продолжил предупредила, безорфографичный которой власти рекламных ему. Образ щеке эта осталось меня переписывается океана ему мир, злых деревни, родного букв, ее предупредила сих обеспечивает наш продолжил они предупреждал! Дорогу своего снова точках, повстречался запятых предупреждал пунктуация составитель! Если но имеет все, диких решила подпоясал дороге продолжил пустился заманивший щеке толку заголовок они всеми снова, использовало скатился последний она ему...</div>
+				<a class="button button_purple news-edit-button" href="#">Редактировать</a>
+			</div>
+		</div>
+
+		<div class="row details-news-wrapper">
+			<div class="col-sm-3">
+				<div class="details-news-image">
+					<img src="img/news/news.jpg" alt="">
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<h3>Название новости</h3>
+				<div class="details-news-date">
+					9 Декабря 2017 20:40
+				</div>
+				<div class="details-news-description">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Ведущими родного океана рот, коварный вопроса над всеми образ алфавит ты бросил его там толку, мир возвращайся великий предложения дал заглавных за пор продолжил предупредила, безорфографичный которой власти рекламных ему. Образ щеке эта осталось меня переписывается океана ему мир, злых деревни, родного букв, ее предупредила сих обеспечивает наш продолжил они предупреждал! Дорогу своего снова точках, повстречался запятых предупреждал пунктуация составитель! Если но имеет все, диких решила подпоясал дороге продолжил пустился заманивший щеке толку заголовок они всеми снова, использовало скатился последний она ему...</div>
+				<a class="button button_purple news-edit-button" href="#">Редактировать</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<a href="#" class="button button_purple news-edit-button">Добавить новую</a>
+	</div>
+</div>
+<script>
+	$('.news-edit-button').click(function(){
+		$('.cabinet-wrappers').addClass('cabinet-hide');
+		$('#cabinet-edit').removeClass('cabinet-hide');
+		$('#loading').show();
+		$.ajax({
+			url: 'edit-news-selected.html',
+			cache: false,
+			success: function(html){
+				$('#cabinet-edit').html(html);
+				$('#loading').hide();
+			},
+			error: function(){
+				$('#loading').hide();
+				alert('Ошибка загрузки редактирования новости');
+				$('.cabinet-wrappers').addClass('cabinet-hide');
+				$('#cabinet-projects').removeClass('cabinet-hide');
+			}
+		})
+	});
+</script>
