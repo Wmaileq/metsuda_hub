@@ -5,8 +5,9 @@
 <section class="catalog">
 	<div class="container">
 		<h2>Все авторы</h2>
+		<a href="#" id="catalog-filters" class="button button_purple catalog-filters mobile_show">Показать фильтры</a>
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-9 col-xs-12">
 				<div class="catalog-projects">
 					<div class="col-sm-3">
 						<div class="catalog-card catalog-card_author">
@@ -24,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3 col-xs-12 catalog-sidebar-hidden">
 				<div class="catalog-sidebar">
 					<div class="catalog-search">
 						<input type="text" placeholder="Поиск">
@@ -124,6 +125,14 @@
 <!-- Начало скиптов -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/bootstrap.modal.min.js"></script>
+	<script>
+		$('#catalog-filters').click(function(){
+			$('.catalog-sidebar-hidden').animate({
+				height: 'toggle'
+			}, 200);
+			return false;
+		})
+	</script>
 <!-- Конец скриптов -->
 
 </body>

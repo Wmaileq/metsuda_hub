@@ -149,3 +149,34 @@
 	display: none
 	a
 		color: #fff
+@media (max-width: 767px)
+	.header
+		height: 6rem
+		background-size: 120%
+		img
+			max-height: 6rem
+	.burger-menu
+		position: fixed
+		display: none
+		top: 6rem
+		left: 0
+		width: 100%
+		height: calc(100vh - 6rem)
+		background-color: $m-c
+		ul
+			display: block
+			li
+				display: block
+				padding: 1rem
+				text-align: center
+	.header-login
+		height: 6rem
+	.burger-menu-button
+		position: absolute
+		width: 4rem
+		height: 4rem
+		background: url(../img/svg/menu.svg) center center no-repeat
+		background-size: cover
+		right: 15px
+		top: 10px
+		transform

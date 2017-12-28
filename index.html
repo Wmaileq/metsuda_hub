@@ -21,13 +21,13 @@
 <!-- Начало Блока "Создать проект" -->
 	<section class="create">
 		<div class="container">
-			<div class="col-sm-7">
+			<div class="col-sm-7 col-xs-12">
 				<div class="create-offer">
 					<h2>Есть идея?</h2>
 					<p>Предложите людям интересную идею или что-то полезное. Расскажите об этом всем, протестируйте спрос на свой продукт через ранние предзаказы. Получите деньги и измените мир прямо сейчас!</p>
 				</div>
 			</div>
-			<div class="col-sm-4 col-sm-offset-1">
+			<div class="col-sm-4 col-sm-offset-1 col-xs-12">
 				<div class="create-solution">
 					<a class="button button_purple" href="#">Создать проект</a>
 				</div>
@@ -40,7 +40,7 @@
 	<section class="stats">
 		<div class="container">
 			<h2>За нашими плечами богатый опыт</h2>
-			<div class="col-sm-4">
+			<div class="col-sm-4 col-xs-12">
 				<div class="stats-projects">
 					<div class="stats-number">
 						1000
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-4 col-xs-12">
 				<div class="stats-money">
 					<div class="stats-number">
 						100.000.000
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-4 col-xs-12">
 				<div class="stats-authors">
 					<div class="stats-number">
 						678
@@ -84,7 +84,7 @@
 				<span>Начало</span>
 				7 Декабря 2017 16:00
 			</div>
-			<div class="project-status project-status_active">
+			<div class="project-status project-status_active mobile_hide">
 				Проект активен
 			</div>
 			<div class="project-end">
@@ -129,6 +129,13 @@
 <!-- Начало скиптов -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
+	<script>
+		$('#burger-button').click(function(){
+			$('#burger-menu').animate({
+				height:'toggle'
+			}, 200);
+		})
+	</script>
 	<script>
 	$('#opening').parallax({
 		imageSrc: 'img/opening/opening-bg.jpg',

@@ -1,6 +1,6 @@
 @import common
 .catalog
-	margin-top: 4rem
+	padding-top: 4rem
 	padding-bottom: 4rem
 	h2
 		text-align: center
@@ -13,6 +13,7 @@
 		background-color: #fff
 		overflow: hidden
 		box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem rgba(0,0,0,0.15)
+		margin-bottom: 2rem
 		img
 			position: absolute
 			top: 0
@@ -190,3 +191,31 @@
 	text-align: center
 	span
 		font-weight: 700
+@media (max-width: 767px)
+	.catalog
+		position: relative
+		overflow: hidden
+		text-align: center
+	.catalog-card
+		width: 26rem
+		margin: 1rem auto
+	.catalog-sidebar-hidden
+		display: none
+		margin-top: 2rem
+	.catalog-filters
+		margin-bottom: 2rem
+		padding-left: 4rem!important
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			left: 1rem
+			top: 1.5rem
+			width: 2rem
+			height: 2rem
+			background: url(../img/svg/filter_purple.svg) center center no-repeat
+			background-size: cover
+		&:hover
+			&:before
+				background: url(../img/svg/filter_white.svg) center center no-repeat
+				background-size: cover!important

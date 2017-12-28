@@ -21,13 +21,14 @@
 	<header class="header">
 		<div class="header-overlay"></div>
 		<div class="container">
-			<div class="col-sm-2">
+			<div id="burger-button" class="burger-menu-button mobile_show"></div>
+			<div class="col-sm-2 col-xs-6">
 				<a href="index.html">
 					<img src="img/logo.svg" alt="Methuda Hub - Каталог краудфандинговых проектов">
 				</a>
 			</div>
-			<div class="col-sm-10">
-				<div class="col-sm-8">
+			<div class="col-sm-10 col-xs-6">
+				<div id="burger-menu" class="col-sm-8 burger-menu">
 					<nav class="header-nav">
 						<ul>
 							<li>
@@ -48,10 +49,13 @@
 							<li>
 								<a href="news.html">Новости</a>
 							</li>
+							<li class="mobile_show">
+								<a href="login.html">Войти</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 mobile_hide">
 					<div class="header-search">
 						<div class="header-search-wrapper">
 							<input type="text" placeholder="Поиск по проектам">
@@ -59,7 +63,7 @@
 						<input type="submit" value="">
 					</div>
 				</div>
-				<div class="col-sm-1">
+				<div class="col-sm-1 mobile_hide">
 					<div class="header-login">
 						<a href="login.html">Войти</a>
 					</div>
@@ -68,14 +72,14 @@
 		</div>
 	</header>
 
-<div class="secondarynav">
+<div class="secondarynav mobile_hide">
 	<div class="container">
-		<div class="col-sm-8">
+		<div class="col-sm-8 mobile_hide">
 			<div class="secondarynav-left">
 				<a href="index.html">Главная</a>
 				<a href="catalog.html">Каталог проектов</a></div>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 col-xs-12">
 			<div class="secondarynav-right">
 				<ul>
 					<li><a href="#"><img src="img/svg/vk_purple.svg" alt="Мы - Вконтакте"></a></li>
@@ -89,7 +93,7 @@
 <section class="new">
 	<div class="container">
 		<h2>Создание проекта</h2>
-		<div class="col-sm-9">
+		<div class="col-sm-9 col-xs-12">
 			<form action="#" id="form-new">
 				<div class="new-wrapper new-title">
 					<h3>Название проекта</h3>
@@ -147,7 +151,8 @@
 				</div>
 			</form>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 col-xs-12">
+			<h3 class="mobile_show">Так будет выглядеть ваш проект:</h3>
 			<div class="new-preview">
 				<div class="catalog-card">
 					<a href="project.html">

@@ -1,5 +1,7 @@
 @import common
 .news
+	padding-top: 4rem
+	padding-bottom: 4rem
 	h1
 		text-align: center
 .news-wrapper
@@ -45,3 +47,22 @@
 .news-more
 	margin-top: 2rem
 	text-align: right
+@media (max-width: 767px)
+	.news-card
+		width: 100%
+		margin: 0
+	.news-image
+		height: 20rem
+		img
+			height: 20rem
+	.news-more
+		text-align: center
+	.news-wrapper>div:nth-child(2n)
+		margin-top: 2rem
+	.news-wrapper>div:nth-child(2n+1)
+		margin-top: 2rem
+	.news-edit-button
+		display: block
+		width: 24rem
+		margin: 2rem auto 0 auto
+		text-align: center
