@@ -10,6 +10,7 @@
 	<!-- Подключенные CSS -->
 	<link href="css/bootstrap.grid.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.modal.min.css">
+	<link rel="stylesheet" href="css/cropper.min.css">
 	<!-- Конец подключенных CSS -->
 
 	<!-- Компилированный CSS -->
@@ -107,7 +108,8 @@
 				<div class="col-sm-3 col-xs-12">
 					<div class="cabinet-avatar">
 						<img src="img/cabinet/avatar_standart.svg" alt=".">
-						<a class="button button_purple" href="#">Обновить фото</a>
+						<input type="file" id="user-cabinet-avatar" accept="image/jpeg,image/png,image/gif">
+						<label for="user-cabinet-avatar" class="button button_purple" href="#">Обновить фото</label>
 					</div>
 				</div>
 				<div class="col-sm-6 col-xs-12">
@@ -230,6 +232,22 @@
 <div id="loading">
 	<img src="img/svg/loading.svg" alt="">
 </div>
+
+<div id="modal-cropper" class="modal modal-cropper fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">
+        	<span>&times;</span>
+        </button>
+        <h3>Обрезать изображение</h3>
+        <p>Выбранная область будет показываться на Вашей странице автора</p>
+        <div class="cropper-main-wrapper">
+        	<img id="cropper-image" src="img/authors/avatar.jpg" alt="">
+        </div>
+        <a href="#" id="cropper-save-image" class="button button_purple">Сохранить изображение</a>
+    </div>
+  </div>
+</div>
 <footer class="footer">
 	<div class="footer-overlay"></div>
 	<div class="container">
@@ -241,6 +259,60 @@
 
 <!-- Начало скиптов -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/bootstrap.modal.min.js"></script>
+	<script src="js/cropper.min.js"></script>
+	<script>
+		$('#cropper-image').cropper({
+			viewMode: 2,
+			dragMode: 'move',
+			aspectRatio: 65 / 54,
+			background: false,
+			autoCropArea: 1,
+			movable: false,
+			scalebale: false,
+			rotatable: false,
+			zoomOnWheel: false
+		});
+		$('#cropper-save-image').click(function(e){
+			e.preventDefault();
+			$('#cropper-image').cropper('getCroppedCanvas').toBlob(function (blob){
+				var formData = new FormData();
+				formData.append('croppedImage', blob);
+				xhr = new XMLHttpRequest();
+				xhr.open('POST', '/cabinet/avatar_preview', true);
+				xhr.onload = function(){
+					if (xhr.status == 200) {
+						$('#modal-cropper').modal('hide');
+				}
+			};
+		})
+		$('#user-cabinet-avatar').on('change', function(){
+			var image = $(this)[0].files[0];
+			$('#loading').show();
+			var formData = new FormData();
+			formData.append('file', image, image.name);
+			xhr = new XMLHttpRequest();
+			xhr.open('POST', '/cabinet/avatar_preview', true);
+			xhr.onload = function(){
+				if (xhr.status == 200) {
+					$('#loading').hide();
+					$('#modal-cropper').modal('show');
+					$('#cropper-image').attr('src', xhr.responseText);
+					$('#cropper-image').cropper({
+						viewMode: 2,
+						dragMode: 'move',
+						aspectRatio: 65 / 54,
+						background: false,
+						autoCropArea: 1,
+						movable: false,
+						scalebale: false,
+						rotatable: false,
+						zoomOnWheel: false
+					});
+				}
+			}
+		});
+	</script>
 	<script>
 		$('.cabinet-tab').click(function(){
 			$('.cabinet-wrappers').addClass('cabinet-hide');

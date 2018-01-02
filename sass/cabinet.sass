@@ -37,8 +37,11 @@
 		font-size: 2.2rem
 .cabinet-avatar
 	text-align: center
-	a
+	input[type="file"]
+		display: none
+	label
 		margin-top: 2rem
+		cursor: pointer
 	img
 		max-width: 100%
 .cabinet-info
@@ -153,6 +156,25 @@
 		position: absolute
 		top: calc(50% - 7.5rem)
 		left: calc(50% - 7.5rem)
+.modal-cropper
+	text-align: center
+	p
+		margin-bottom: 2rem
+	a
+		margin-top: 2rem
+.cropper-main-wrapper
+	width: 80rem
+	height: 60rem
+	margin: 0 auto
+	img
+		max-height: 100%
+.cropper-view-box
+	outline-color: $m-c
+	outline: 1px solid $m-c
+.cropper-line
+	background-color: $m-c
+.cropper-point
+	background-color: $m-c
 @media (max-width: 767px)
 	.cabinet-tab
 		width: 50%
@@ -164,6 +186,8 @@
 	.cabinet-edit
 		text-align: center
 		margin-top: 2rem
+	.cropper-main-wrapper
+		width: 100%
 @media (max-width: 378px)
 	.cabinet-tab
 		padding: 2rem 0.5rem
