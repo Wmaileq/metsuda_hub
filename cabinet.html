@@ -15,7 +15,7 @@
 			<div id="cabinet-profile" class="cabinet-profile cabinet-wrappers">
 				<div class="col-sm-3 col-xs-12">
 					<div class="cabinet-avatar">
-						<img src="img/cabinet/avatar_standart.svg" alt=".">
+						<img id="cabinet-avatar-preview" src="img/cabinet/avatar_standart.svg" alt=".">
 						<input type="file" id="user-cabinet-avatar" accept="image/jpeg,image/png,image/gif">
 						<label for="user-cabinet-avatar" class="button button_purple" href="#">Обновить фото</label>
 					</div>
@@ -163,20 +163,37 @@
 	<script src="js/bootstrap.modal.min.js"></script>
 	<script src="js/cropper.min.js"></script>
 	<script>
-		$('#cropper-image').cropper({
-			viewMode: 2,
-			dragMode: 'move',
-			aspectRatio: 65 / 54,
-			background: false,
-			autoCropArea: 1,
-			movable: false,
-			scalebale: false,
-			rotatable: false,
-			zoomOnWheel: false
+		$('#user-cabinet-avatar').on('change', function(event){
+			var loading = $('#loading');
+			var input = event.target;
+			var reader = new FileReader();
+			reader.onloadstart = function() {
+				loading.show();
+		    };
+		    reader.onloadend = function() {
+				loading.hide();
+		    };
+		    reader.onload = function(){
+				var dataURL = reader.result;
+				$('#modal-cropper').modal('show');
+				$('#cropper-image').attr('src', dataURL);
+				$('#cropper-image').cropper({
+					viewMode: 2,
+					dragMode: 'move',
+					aspectRatio: 65 / 54,
+					background: false,
+					autoCropArea: 1,
+					movable: false,
+					scalebale: false,
+					rotatable: false,
+					zoomOnWheel: false
+				});
+		    };
+		    reader.readAsDataURL(input.files[0]);
 		});
 		$('#cropper-save-image').click(function(e){
 			e.preventDefault();
-			$('#cropper-image').cropper('getCroppedCanvas').toBlob(function (blob){
+			$('#cropper-image').cropper('getCroppedCanvas').toBlob(function(blob){
 				var formData = new FormData();
 				formData.append('croppedImage', blob);
 				xhr = new XMLHttpRequest();
@@ -184,34 +201,12 @@
 				xhr.onload = function(){
 					if (xhr.status == 200) {
 						$('#modal-cropper').modal('hide');
-				}
-			};
-		})
-		$('#user-cabinet-avatar').on('change', function(){
-			var image = $(this)[0].files[0];
-			$('#loading').show();
-			var formData = new FormData();
-			formData.append('file', image, image.name);
-			xhr = new XMLHttpRequest();
-			xhr.open('POST', '/cabinet/avatar_preview', true);
-			xhr.onload = function(){
-				if (xhr.status == 200) {
-					$('#loading').hide();
-					$('#modal-cropper').modal('show');
-					$('#cropper-image').attr('src', xhr.responseText);
-					$('#cropper-image').cropper({
-						viewMode: 2,
-						dragMode: 'move',
-						aspectRatio: 65 / 54,
-						background: false,
-						autoCropArea: 1,
-						movable: false,
-						scalebale: false,
-						rotatable: false,
-						zoomOnWheel: false
-					});
-				}
-			}
+						$('#cabinet-avatar-preview').attr('src', xhr.responseText);
+						$('#form-profile-save').attr('type', 'submit');
+					};
+				xhr.send(formData);
+				};
+			});
 		});
 	</script>
 	<script>
