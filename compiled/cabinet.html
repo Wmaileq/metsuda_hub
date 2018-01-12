@@ -95,6 +95,7 @@
 
 <div class="cabinet">
 	<div class="container">
+		<h2>Личный кабинет</h2>
 		<div class="cabinet-tabs">
 			<div class="cabinet-tab cabinet-tab_left cabinet-tab_active">
 				<a href="#cabinet-profile">Мой профиль</a>
@@ -109,10 +110,16 @@
 					<div class="cabinet-avatar">
 						<img id="cabinet-avatar-preview" src="img/cabinet/avatar_standart.svg" alt=".">
 						<input type="file" id="user-cabinet-avatar" accept="image/jpeg,image/png,image/gif">
+						<div class="cabinet-avatar-info">
+							Максимальный размер файла - 4 мб.<br>Размер миниатюры - 180x150
+						</div>
 						<label for="user-cabinet-avatar" class="button button_purple" href="#">Обновить фото</label>
 					</div>
+					<div class="cabinet-edit">
+						<a id="editButton" class="button button_purple" href="#">Редактировать профиль</a>
+					</div>
 				</div>
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-sm-9 col-xs-12">
 					<div class="cabinet-info">
 						<h3>Кирилёнок Владислав Сергеевич</h3>
 						<form id="form-profile" action="#">
@@ -139,11 +146,6 @@
 						</ul>
 						<input id="form-profile-save" class="button button_purple" type="hidden" value="Сохранить">
 						</form>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-12">
-					<div class="cabinet-edit">
-						<a id="editButton" class="button button_purple" href="#">Редактировать профиль</a>
 					</div>
 				</div>
 			</div>

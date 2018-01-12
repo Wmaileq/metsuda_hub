@@ -5,9 +5,11 @@
 	width: 100%
 	left: 0
 	top: 0
-	font-family: $s-f
+	font-family: $m-f
 	letter-spacing: -0.1rem
 	background: url(../img/gradient.svg) repeat
+	background-size: auto 100%
+	background-position: -15px 0
 	box-shadow: 0 0.15rem 0.4rem 0.1rem rgba(0,0,0,0.15)
 	font-size: 1.8rem
 	z-index: 1000
@@ -152,9 +154,12 @@
 @media (max-width: 767px)
 	.header
 		height: 6rem
+		background: url(../img/gradient.svg) center repeat
 		background-size: 120%
 		img
 			max-height: 6rem
+			position: absolute
+			left: 0
 	.burger-menu
 		position: fixed
 		display: none

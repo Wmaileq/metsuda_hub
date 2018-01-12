@@ -9,11 +9,11 @@
 			<form action="#" id="form-new">
 				<div class="new-wrapper new-title">
 					<h3>Название проекта</h3>
-					<p class="new-tint">Простое, запоминающееся, отражающее суть проекта</p>
-					<input id="new-title" name="title" type="text" placeholder="Введите название проекта">
+					<input id="new-title" name="title" type="text" placeholder="Введите название проекта" maxlength="60">
 				</div>
 				<div class="new-wrapper new-image">
 					<h3>Обложка проекта</h3>
+					<p class="new-tint">Максимальный размер файла - 4 мб.<br>Размер миниатюры - 260х180</p>
 					<label class="button button_purple" for="new-image">Загрузить изображение</label>
 					<input id="new-image" type="file"  accept="image/jpeg,image/png,image/gif">
 					<img id="new-image-loading" src="img/svg/loading.svg" alt=".">
@@ -22,7 +22,7 @@
 				<div class="new-wrapper new-desc-short">
 					<h3>О проекте в одном предложении</h3>
 					<p class="new-tint">Будет отображаться в каталоге проектов</p>
-					<input id="new-desc-short" name="new-desc-short" type="text" placeholder="Введите краткое описание">
+					<input id="new-desc-short" name="new-desc-short" type="text" placeholder="Введите краткое описание" maxlength="150">
 				</div>
 				<div class="new-wrapper new-category">
 					<h3>Категория</h3>
@@ -69,10 +69,10 @@
 				<div class="catalog-card">
 					<a href="project.html">
 						<img id="catalog-card-preview" src="img/catalog/project.jpg" alt="">
-						<h3>Название стартапа в две строки максимум</h3>
+						<h3>Название проекта</h3>
 					</a>
 					<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
-					<p>Краткое описание проекта (должно обрезаться, если введено слишком много текста Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+					<p>В этом тексте сейчас ровно 150 символов, надеюсь, что этого будет хватать авторам проектов, вот так-то, напишу еще что-нибудь, чтобы символов было то!</p>
 					<a href="#" class="catalog-geo">
 						<span>Санкт-Петербург, Россия</span>
 					</a>
@@ -117,7 +117,7 @@
 			var content = $('#new-city option:selected').val();
 			$('.new-preview .catalog-geo span').html(content);
 		});
-		$('#new-budget').on('keyup', function(){
+		$('#new-budget').on('change', function(){
 			var content = $(this).val();
 			$('.new-preview .catalog-money').html('<span>Бюджет</span> ' + content.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1'));
 		});

@@ -7,7 +7,7 @@
 	&:hover, &:focus
 		text-decoration: none!important
 		outline: none!important
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i,400|Open+Sans:400');
 html
 	font-size: 10px
 body
@@ -15,17 +15,19 @@ body
 	background: url(../img/common/bg.png) repeat
 	padding-top: 8.5rem
 h1,h2,h3,h4,h5,h6
-	font-family: $s-f
+	font-family: $m-f
 h1
 	font-size: 4.2rem
 	text-align: center
 	line-height: 5.2rem
 	margin: 0
 	font-weight: 600
+	font-family: $s-f
 	span
 		display: block
 h2
-	font-size: 3.8rem
+	font-size: 3.6rem
+	font-family: $s-f
 .section-shadow
 	box-shadow: 0 0.5rem 2rem 0.4rem rgba($m-c, 0.15)
 .button
@@ -50,6 +52,8 @@ h2
 		&:hover
 			background-color: $m-c
 			color: #fff
+		&:active
+			box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem rgba(0,0,0,0)
 @media (max-width: 767px)
 	body
 		padding-top: 6rem
