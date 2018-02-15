@@ -85,12 +85,25 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
 	<script>
-		$('#catalog-filters').click(function(){
-			$('.catalog-sidebar-hidden').animate({
-				height: 'toggle'
-			}, 200);
+		$(document).ready(function(){
+			var  sidebar = $('.catalog-sidebar-hidden');
+			$(window).on('resize', function(){
+				if ($(this).width() < 767) {
+					sidebar.prependTo(sidebar.parent());
+				} else {
+					sidebar.appendTo(sidebar.parent());
+				}
+			});
+
+			$('#catalog-filters').click(function(){
+				$('.catalog-sidebar-hidden').animate({
+					height: 'toggle'
+				}, 200);
 			return false;
+			});
+
 		})
+		
 	</script>
 	<script>
 	$('#opening').parallax({
