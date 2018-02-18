@@ -6,40 +6,7 @@
 	<div class="container">
 		<h2>Все проекты</h2>
 		<a href="#" id="catalog-filters" class="button button_purple catalog-filters mobile_show">Показать фильтры</a>
-		<div class="row">
-			<div class="col-sm-9 col-xs-12">
-				<div class="catalog-projects">
-					<div class="col-sm-4 col-xs-12">
-						<div class="catalog-card">
-							<a href="project.html">
-								<img src="img/catalog/project.jpg" alt="">
-								<h3>Название стартапа в две строки максимум</h3>
-							</a>
-							<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
-							<p>В этом тексте сейчас ровно 150 символов, надеюсь, что этого будет хватать авторам проектов, вот так-то, напишу еще что-нибудь, чтобы символов было то!</p>
-							<a href="#" class="catalog-geo">
-								<span>Санкт-Петербург, Россия</span>
-							</a>
-							<div class="catalog-progress">
-								<div class="catalog-status catalog-status_open">
-									Статус проекта: <span>Открыт</span>
-								</div>
-								<div class="catalog-money">
-									<span>Бюджет:</span>18.000	
-								</div>
-							</div>
-							<div class="catalog-dates">
-								<div class="catalog-dates-start">
-									<span>Начало:</span> 10 Декабря 2017
-								</div>
-								<div class="catalog-dates-end">
-									<span>Конец:</span> 18 Декабря 2017
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="row catalog-wrapper">
 			<div class="col-sm-3 col-xs-12 catalog-sidebar-hidden">
 				<div class="catalog-sidebar">
 					<div class="catalog-search">
@@ -77,6 +44,39 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-sm-9 col-xs-12">
+				<div class="catalog-projects">
+					<div class="col-sm-4 col-xs-12">
+						<div class="catalog-card">
+							<a href="project.html">
+								<img src="img/catalog/project.jpg" alt="">
+								<h3>Название стартапа в две строки максимум</h3>
+							</a>
+							<div class="catalog-author">Автор: <a href="#">Владислав Кирилёнок</a></div>
+							<p>В этом тексте сейчас ровно 150 символов, надеюсь, что этого будет хватать авторам проектов, вот так-то, напишу еще что-нибудь, чтобы символов было то!</p>
+							<a href="#" class="catalog-geo">
+								<span>Санкт-Петербург, Россия</span>
+							</a>
+							<div class="catalog-progress">
+								<div class="catalog-status catalog-status_open">
+									Статус проекта: <span>Открыт</span>
+								</div>
+								<div class="catalog-money">
+									<span>Бюджет:</span>18.000	
+								</div>
+							</div>
+							<div class="catalog-dates">
+								<div class="catalog-dates-start">
+									<span>Начало:</span> 10 Декабря 2017
+								</div>
+								<div class="catalog-dates-end">
+									<span>Конец:</span> 18 Декабря 2017
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -86,22 +86,12 @@
 	<script src="js/parallax.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			var  sidebar = $('.catalog-sidebar-hidden');
-			$(window).on('resize', function(){
-				if ($(this).width() < 767) {
-					sidebar.prependTo(sidebar.parent());
-				} else {
-					sidebar.appendTo(sidebar.parent());
-				}
-			});
-
 			$('#catalog-filters').click(function(){
 				$('.catalog-sidebar-hidden').animate({
 					height: 'toggle'
 				}, 200);
 			return false;
 			});
-
 		})
 		
 	</script>
